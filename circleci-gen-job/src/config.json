@@ -1,0 +1,116 @@
+{
+  "name": "CirclrCI-Job",
+  "description": "CircleCI job generator",
+  "type": "executer",
+  "main": "app.js",
+  "execProgram": "node",
+  "exposeRoute": false,
+  "imgUrl": "logo.png",
+  "version": "1.0.0",
+  "settings" : [],
+  "methods": [
+    {
+      "name": "createJob",
+      "viewName": "Create Job",
+      "params": [
+        {
+          "name": "name",
+          "viewName": "Job name",
+          "type": "string"
+        },
+        {
+          "name": "environment",
+          "viewName": "Environment",
+          "type": "text"
+        },
+        {
+          "name": "workingDirectory",
+          "viewName": "Working Directory",
+          "type": "string"
+        },
+        {
+          "name": "dockerImage",
+          "viewName": "Docker Image",
+          "type": "autocomplete",
+          "autocompleteType": "function",
+          "functionName": "getDockerImages"
+        },
+        {
+          "name": "resourceClass",
+          "viewName": "Resource Class",
+          "type": "autocomplete",
+          "autocompleteType": "function",
+          "functionName": "getResourceClasses"
+        }
+      ]
+    },
+    {
+      "name": "createWorkflowJob",
+      "viewName": "Create Workflow Job",
+      "params": [
+        {
+          "name": "workflow",
+          "viewName": "Workflow",
+          "type": "string"
+        },
+        {
+          "name": "job",
+          "viewName": "Job",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "createBranchesFilter",
+      "viewName": "Job Branches Filter",
+      "params": [
+        {
+          "name": "workflow",
+          "viewName": "Workflow",
+          "type": "string"
+        },
+        {
+          "name": "job",
+          "viewName": "Job",
+          "type": "string"
+        },
+        {
+          "name": "only",
+          "viewName": "Only",
+          "type": "text"
+        },
+        {
+          "name": "ignore",
+          "viewName": "Ignore",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "name": "createTagsFilter",
+      "viewName": "Job Tags Filter",
+      "params": [
+        {
+          "name": "workflow",
+          "viewName": "Workflow",
+          "type": "string"
+        },
+        {
+          "name": "job",
+          "viewName": "Job",
+          "type": "string"
+        },
+        {
+          "name": "only",
+          "viewName": "Only",
+          "type": "text"
+        },
+        {
+          "name": "ignore",
+          "viewName": "Ignore",
+          "type": "text"
+        }
+      ]
+    }
+  ]
+}
