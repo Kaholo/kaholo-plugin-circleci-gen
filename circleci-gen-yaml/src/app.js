@@ -23,8 +23,6 @@ async function createYml(action){
   return yamlString;
 }
 
-createYml().then(console.log).catch(console.error);
-
 module.exports = {
   createYml
 };
